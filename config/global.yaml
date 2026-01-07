@@ -1,0 +1,75 @@
+# Global Configuration for MMX Agent System
+# ==========================================
+
+# System Metadata
+system:
+  name: "MMX Agent POC"
+  version: "1.0.0"
+  environment: "local"
+  
+# Data Configuration
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  features_path: "data/features"
+  scenarios_path: "data/scenarios"
+  
+  # Time granularity
+  time_granularity: "weekly"
+  date_format: "%Y-%m-%d"
+  
+# Model Configuration
+modeling:
+  granularity: "channel"  # channel-level MMM
+  model_type: "ridge" # Options: ridge, bayesian
+  response_curve: "hill"   # Hill saturation function
+  adstock_type: "geometric"  # geometric decay
+  
+  # Model parameters
+  train_test_split: 0.8
+  validation_method: "time_series_split"
+  
+# Optimization Configuration
+optimization:
+  solver: "scipy"
+  method: "SLSQP"  # Sequential Least Squares Programming
+  max_iterations: 1000
+  tolerance: 1e-6
+  
+# Orchestration Configuration
+orchestration:
+  enable_checkpoints: true
+  checkpoint_locations:
+    - "after_segmentation"
+    - "after_baseline"
+    - "before_optimization"
+  
+  # State persistence
+  state_file: "orchestration/pipeline_state.json"
+  enable_logging: true
+  log_level: "INFO"
+  log_file: "logs/mmx_pipeline.log"
+  
+# Artifacts Configuration
+artifacts:
+  contributions_path: "artifacts/contributions"
+  curves_path: "artifacts/curves"
+  roi_path: "artifacts/roi"
+  decks_path: "artifacts/decks"
+  
+  # Output formats
+  output_formats:
+    - "csv"
+    - "json"
+    - "excel"
+  
+# Model Registry
+models:
+  registry_path: "models/registry.json"
+  trained_models_path: "models/trained"
+  
+# Execution Configuration
+execution:
+  parallel_execution: false  # Sequential for POC
+  max_retries: 3
+  timeout_seconds: 3600

@@ -1,0 +1,570 @@
+{
+  "models": [
+    {
+      "model_id": "mmm_model_20260105_130512",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-05T13:05:12.307478",
+      "channels": [
+        "TV",
+        "DIGITAL",
+        "PRINT",
+        "OOH",
+        "RADIO"
+      ],
+      "metrics": {
+        "r_squared": -0.034903198455270346,
+        "r_squared_train": 1.1102230246251565e-16,
+        "adjusted_r_squared": -0.006053268765133124,
+        "mae": 9758.025068219089,
+        "mae_train": 8687.362094478467,
+        "rmse": 12441.786885341426,
+        "rmse_train": 10849.268179048007,
+        "mape": 103.65706382635653,
+        "mape_train": 104.23056916597828,
+        "coefficients": {
+          "TV_transformed": 5.636198252572194e-08,
+          "DIGITAL_transformed": 0.000507314924373499,
+          "PRINT_transformed": 0.0004573241644935745,
+          "OOH_transformed": 0.0,
+          "RADIO_transformed": 0.0006164428780518422
+        },
+        "intercept": 393.02586327083094
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260105_130856",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-05T13:08:56.073523",
+      "channels": [
+        "TV",
+        "DIGITAL",
+        "PRINT",
+        "OOH",
+        "RADIO"
+      ],
+      "metrics": {
+        "r_squared": -0.007982964666952697,
+        "r_squared_train": -2.220446049250313e-16,
+        "adjusted_r_squared": -0.006053268765133346,
+        "mae": 8044.612619519802,
+        "mae_train": 8557.990208104326,
+        "rmse": 10220.45756814529,
+        "rmse_train": 10555.921966069274,
+        "mape": 99.78190779074822,
+        "mape_train": 106.55381240036799,
+        "coefficients": {
+          "TV_transformed": 1.4769792040125558e-08,
+          "DIGITAL_transformed": 0.0005301785209941991,
+          "PRINT_transformed": 0.0005170126733363757,
+          "OOH_transformed": 0.0,
+          "RADIO_transformed": 0.0004785345390186216
+        },
+        "intercept": 142.723065492548
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260105_130927",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-05T13:09:27.697265",
+      "channels": [
+        "TV",
+        "DIGITAL",
+        "PRINT",
+        "OOH",
+        "RADIO"
+      ],
+      "metrics": {
+        "r_squared": -0.016433181490689064,
+        "r_squared_train": 1.1102230246251565e-16,
+        "adjusted_r_squared": -0.006053268765133124,
+        "mae": 8193.297447299796,
+        "mae_train": 8605.573927137952,
+        "rmse": 10137.790079369606,
+        "rmse_train": 10806.899618901809,
+        "mape": 100.4597912866419,
+        "mape_train": 101.85831659784002,
+        "coefficients": {
+          "TV_transformed": 1.6212219134070552e-08,
+          "DIGITAL_transformed": 0.0004421001733675704,
+          "PRINT_transformed": 0.00045230448687457944,
+          "OOH_transformed": 0.0,
+          "RADIO_transformed": 0.00048130213674216774
+        },
+        "intercept": 282.05235424913496
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260105_211402",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-05T21:14:02.507510",
+      "channels": [
+        "TV",
+        "SOCIAL_MEDIA",
+        "EVENTS",
+        "TRADE",
+        "SALES_FORCE",
+        "COMPETITOR_MARKET_SHARE",
+        "COMPETITOR_MKT_HALO",
+        "PRESCRIPTIONS"
+      ],
+      "metrics": {
+        "r_squared": -0.02624285483233635,
+        "r_squared_train": 2.3869654866004453e-05,
+        "adjusted_r_squared": -0.06296675272907937,
+        "mae": 3.016860787354384,
+        "mae_train": 3.313019574510541,
+        "rmse": 3.700096492733073,
+        "rmse_train": 4.279172108973376,
+        "mape": 163.74068754149317,
+        "mape_train": 118.41424546064458,
+        "coefficients": {
+          "TV_transformed": 0.00026185623886536215,
+          "SOCIAL_MEDIA_transformed": 0.008113163497035291,
+          "EVENTS_transformed": 0.0028435097194099085,
+          "TRADE_transformed": 0.004557694799374255,
+          "SALES_FORCE_transformed": 0.008940486280503167,
+          "COMPETITOR_MARKET_SHARE_transformed": 0.0,
+          "COMPETITOR_MKT_HALO_transformed": 0.10528509376557792,
+          "PRESCRIPTIONS_transformed": 0.13588779938807333
+        },
+        "intercept": -0.4356447472797457
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_095854",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T09:58:54.045449",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_100210",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:02:10.035336",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.5065670973614513,
+        "r_squared_train": 0.14429875061708886,
+        "adjusted_r_squared": 0.114349206888687,
+        "mae": 13546.395616665757,
+        "mae_train": 10795.40853704196,
+        "rmse": 16725.22629583265,
+        "rmse_train": 14098.325812507079,
+        "mape": 122.40711420873266,
+        "mape_train": 225.76030147956257,
+        "coefficients": {
+          "Branded_Search_transformed": 0.002729911805912051,
+          "Nonbranded_Search_transformed": 0.03449548627328644,
+          "Facebook_transformed": 0.011049416116100384,
+          "Print_transformed": -9468.986969129397,
+          "OOH_transformed": -1439.821592144556,
+          "TV_transformed": 3976.8103901574336,
+          "Radio_transformed": 4539.242443829024
+        },
+        "intercept": 2950.203164011878
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_101949",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:19:49.767985",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.5065670973614513,
+        "r_squared_train": 0.14429875061708886,
+        "adjusted_r_squared": 0.114349206888687,
+        "mae": 13546.395616665757,
+        "mae_train": 10795.40853704196,
+        "rmse": 16725.22629583265,
+        "rmse_train": 14098.325812507079,
+        "mape": 122.40711420873266,
+        "mape_train": 225.76030147956257,
+        "coefficients": {
+          "Branded_Search_transformed": 0.002729911805912051,
+          "Nonbranded_Search_transformed": 0.03449548627328644,
+          "Facebook_transformed": 0.011049416116100384,
+          "Print_transformed": -9468.986969129397,
+          "OOH_transformed": -1439.821592144556,
+          "TV_transformed": 3976.8103901574336,
+          "Radio_transformed": 4539.242443829024
+        },
+        "intercept": 2950.203164011878
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_102051",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:20:51.247673",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_102848",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:28:48.575243",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_103104",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:31:04.226270",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_103245",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:32:45.461388",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_103633",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:36:33.325137",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_105512",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:55:12.196230",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_105836",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T10:58:36.655767",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_110219",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T11:02:19.379160",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    },
+    {
+      "model_id": "mmm_model_20260107_110440",
+      "model_path": "models/trained/mmm_model.pkl",
+      "created_at": "2026-01-07T11:04:40.232893",
+      "channels": [
+        "Branded_Search",
+        "Nonbranded_Search",
+        "Facebook",
+        "Print",
+        "OOH",
+        "TV",
+        "Radio"
+      ],
+      "metrics": {
+        "r_squared": -0.05639093724868549,
+        "r_squared_train": 0.027824142161836818,
+        "adjusted_r_squared": -0.006202012862498885,
+        "mae": 11734.077653070794,
+        "mae_train": 11356.369442481153,
+        "rmse": 14005.225205999539,
+        "rmse_train": 15027.22800250648,
+        "mape": 106.417877132906,
+        "mape_train": 169.08098870136322,
+        "coefficients": {
+          "Branded_Search_transformed": 0.0023487183686936863,
+          "Nonbranded_Search_transformed": 0.03304499894458074,
+          "Facebook_transformed": 0.009533264810348852,
+          "Print_transformed": 0.0,
+          "OOH_transformed": 0.0,
+          "TV_transformed": 4167.190180847402,
+          "Radio_transformed": 5161.62938040023
+        },
+        "intercept": -3169.3376159889585
+      },
+      "status": "active"
+    }
+  ]
+}

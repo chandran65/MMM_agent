@@ -1,0 +1,255 @@
+{
+  "pipeline_result": {
+    "status": "success",
+    "completed_stages": [
+      "segmentation",
+      "trend_scanner",
+      "baseline",
+      "model_optimization",
+      "budget_optimization",
+      "insight_generation"
+    ],
+    "duration_seconds": 3.92519,
+    "start_time": "2026-01-07T10:20:49.515222",
+    "end_time": "2026-01-07T10:20:53.440412",
+    "outputs": {
+      "segmentation": {
+        "status": "success",
+        "n_segments": 3,
+        "quality_metrics": {
+          "silhouette_score": 0.5534744950045148,
+          "inertia": 36.956293912588976,
+          "segment_sizes": {
+            "0": 77,
+            "1": 117,
+            "2": 66
+          }
+        },
+        "output_paths": {
+          "segment_mappings": "data/processed/segment_mappings.csv",
+          "segment_statistics": "data/processed/segment_statistics.json",
+          "visualization": "artifacts/segments_visualization.png"
+        },
+        "segment_distribution": {
+          "1": 117,
+          "0": 77,
+          "2": 66
+        }
+      },
+      "trend_scanner": {
+        "status": "success",
+        "n_flagged_periods": 4,
+        "n_events": 0,
+        "has_seasonality": true,
+        "output_paths": {
+          "flagged_periods": "data/processed/flagged_periods.csv",
+          "event_metadata": "data/processed/event_metadata.json",
+          "visualization": "artifacts/trends_visualization.png"
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "baseline_mean": 67792.83532232241,
+        "n_channels": 5,
+        "output_paths": {
+          "baseline_estimates": "data/processed/baseline_estimates.csv",
+          "priors": "data/processed/priors.json",
+          "constraints": "data/processed/constraints.json"
+        }
+      },
+      "model_optimization": {
+        "status": "success",
+        "model_metrics": {
+          "r_squared": -0.05639093724868549,
+          "r_squared_train": 0.027824142161836818,
+          "adjusted_r_squared": -0.006202012862498885,
+          "mae": 11734.077653070794,
+          "mae_train": 11356.369442481153,
+          "rmse": 14005.225205999539,
+          "rmse_train": 15027.22800250648,
+          "mape": 106.417877132906,
+          "mape_train": 169.08098870136322,
+          "coefficients": {
+            "Branded_Search_transformed": 0.0023487183686936863,
+            "Nonbranded_Search_transformed": 0.03304499894458074,
+            "Facebook_transformed": 0.009533264810348852,
+            "Print_transformed": 0.0,
+            "OOH_transformed": 0.0,
+            "TV_transformed": 4167.190180847402,
+            "Radio_transformed": 5161.62938040023
+          },
+          "intercept": -3169.3376159889585
+        },
+        "n_channels": 7,
+        "total_contribution": 609731.3270431212,
+        "output_paths": {
+          "model": "models/trained/mmm_model.pkl",
+          "metrics": "models/trained/model_metrics.json",
+          "contributions_json": "artifacts/contributions/channel_contributions.json",
+          "contributions_csv": "artifacts/contributions/channel_contributions.csv",
+          "response_curves": "artifacts/curves/response_curves.json"
+        }
+      },
+      "budget_optimization": {
+        "status": "success",
+        "n_scenarios": 3,
+        "base_expected_lift": 5.977878266884719,
+        "output_paths": {
+          "recommendations": "artifacts/roi/optimization_recommendations.csv",
+          "scenario_comparison": "artifacts/roi/scenario_comparison.json",
+          "excel_report": "artifacts/roi/scenario_comparison.xlsx"
+        }
+      },
+      "insight_generation": {
+        "status": "success",
+        "n_insights": 4,
+        "n_narratives": 6,
+        "n_visualizations": 4,
+        "output_paths": {
+          "insights_json": "artifacts/decks/key_insights.json",
+          "narratives": "artifacts/decks/executive_narratives.txt",
+          "excel_report": "artifacts/decks/mmx_summary_report.xlsx",
+          "executive_summary": "artifacts/decks/executive_summary.md",
+          "visualizations": {
+            "contribution_chart": "artifacts/decks/channel_contributions.png",
+            "optimization_chart": "artifacts/decks/optimization_recommendations.png",
+            "response_curves": "artifacts/decks/response_curves.png",
+            "scenario_comparison": "artifacts/decks/scenario_comparison.png"
+          }
+        }
+      }
+    }
+  },
+  "timestamp": "2026-01-07T10:20:53.440419",
+  "stages": {
+    "segmentation": {
+      "output": {
+        "status": "success",
+        "n_segments": 3,
+        "quality_metrics": {
+          "silhouette_score": 0.5534744950045148,
+          "inertia": 36.956293912588976,
+          "segment_sizes": {
+            "0": 77,
+            "1": 117,
+            "2": 66
+          }
+        },
+        "output_paths": {
+          "segment_mappings": "data/processed/segment_mappings.csv",
+          "segment_statistics": "data/processed/segment_statistics.json",
+          "visualization": "artifacts/segments_visualization.png"
+        },
+        "segment_distribution": {
+          "1": 117,
+          "0": 77,
+          "2": 66
+        }
+      },
+      "timestamp": "2026-01-07T11:04:36.481364",
+      "status": "success"
+    },
+    "trend_scanner": {
+      "output": {
+        "status": "success",
+        "n_flagged_periods": 4,
+        "n_events": 0,
+        "has_seasonality": true,
+        "output_paths": {
+          "flagged_periods": "data/processed/flagged_periods.csv",
+          "event_metadata": "data/processed/event_metadata.json",
+          "visualization": "artifacts/trends_visualization.png"
+        }
+      },
+      "timestamp": "2026-01-07T11:04:37.031664",
+      "status": "success"
+    },
+    "baseline": {
+      "output": {
+        "status": "success",
+        "baseline_mean": 67792.83532232241,
+        "n_channels": 5,
+        "output_paths": {
+          "baseline_estimates": "data/processed/baseline_estimates.csv",
+          "priors": "data/processed/priors.json",
+          "constraints": "data/processed/constraints.json"
+        }
+      },
+      "timestamp": "2026-01-07T11:04:37.113153",
+      "status": "success"
+    },
+    "model_optimization": {
+      "output": {
+        "status": "success",
+        "model_metrics": {
+          "r_squared": -0.05639093724868549,
+          "r_squared_train": 0.027824142161836818,
+          "adjusted_r_squared": -0.006202012862498885,
+          "mae": 11734.077653070794,
+          "mae_train": 11356.369442481153,
+          "rmse": 14005.225205999539,
+          "rmse_train": 15027.22800250648,
+          "mape": 106.417877132906,
+          "mape_train": 169.08098870136322,
+          "coefficients": {
+            "Branded_Search_transformed": 0.0023487183686936863,
+            "Nonbranded_Search_transformed": 0.03304499894458074,
+            "Facebook_transformed": 0.009533264810348852,
+            "Print_transformed": 0.0,
+            "OOH_transformed": 0.0,
+            "TV_transformed": 4167.190180847402,
+            "Radio_transformed": 5161.62938040023
+          },
+          "intercept": -3169.3376159889585
+        },
+        "n_channels": 7,
+        "total_contribution": 609731.3270431212,
+        "output_paths": {
+          "model": "models/trained/mmm_model.pkl",
+          "metrics": "models/trained/model_metrics.json",
+          "contributions_json": "artifacts/contributions/channel_contributions.json",
+          "contributions_csv": "artifacts/contributions/channel_contributions.csv",
+          "response_curves": "artifacts/curves/response_curves.json"
+        }
+      },
+      "timestamp": "2026-01-07T11:04:40.236481",
+      "status": "success"
+    },
+    "budget_optimization": {
+      "output": {
+        "status": "success",
+        "n_scenarios": 3,
+        "base_expected_lift": 5.977878266884719,
+        "output_paths": {
+          "recommendations": "artifacts/roi/optimization_recommendations.csv",
+          "scenario_comparison": "artifacts/roi/scenario_comparison.json",
+          "excel_report": "artifacts/roi/scenario_comparison.xlsx"
+        }
+      },
+      "timestamp": "2026-01-07T11:05:00.282741",
+      "status": "success"
+    },
+    "insight_generation": {
+      "output": {
+        "status": "success",
+        "n_insights": 4,
+        "n_narratives": 6,
+        "n_visualizations": 4,
+        "output_paths": {
+          "insights_json": "artifacts/decks/key_insights.json",
+          "narratives": "artifacts/decks/executive_narratives.txt",
+          "excel_report": "artifacts/decks/mmx_summary_report.xlsx",
+          "executive_summary": "artifacts/decks/executive_summary.md",
+          "visualizations": {
+            "contribution_chart": "artifacts/decks/channel_contributions.png",
+            "optimization_chart": "artifacts/decks/optimization_recommendations.png",
+            "response_curves": "artifacts/decks/response_curves.png",
+            "scenario_comparison": "artifacts/decks/scenario_comparison.png"
+          }
+        }
+      },
+      "timestamp": "2026-01-07T11:05:02.573132",
+      "status": "success"
+    }
+  }
+}

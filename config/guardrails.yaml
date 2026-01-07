@@ -1,0 +1,122 @@
+# Guardrails and Validation Configuration
+# =========================================
+
+# Data Quality Guardrails
+data_quality:
+  # Missing data thresholds
+  max_missing_percentage: 0.10  # 10% maximum missing data
+  
+  # Outlier detection
+  outlier_detection:
+    method: "iqr"  # IQR or z-score
+    threshold: 3.0
+    
+  # Minimum data requirements
+  min_weeks_required: 104  # 2 years of weekly data
+  min_channels_required: 3
+  
+  # Data consistency checks
+  checks:
+    - name: "non_negative_sales"
+      description: "Sales values must be non-negative"
+    - name: "non_negative_spend"
+      description: "Spend values must be non-negative"
+    - name: "date_continuity"
+      description: "No gaps in weekly time series"
+
+# Model Quality Guardrails
+model_quality:
+  # Minimum model performance
+  min_r_squared: 0.6
+  min_adjusted_r_squared: 0.55
+  max_mape: 0.20  # Maximum Mean Absolute Percentage Error
+  
+  # Coefficient validation
+  coefficients:
+    check_signs: true  # All marketing coefficients should be positive
+    check_magnitude: true
+    max_vif: 10.0  # Variance Inflation Factor for multicollinearity
+  
+  # Residual checks
+  residuals:
+    check_normality: true
+    check_autocorrelation: true
+    max_durbin_watson_deviation: 0.5  # DW should be around 2.0
+
+# Business Logic Guardrails
+business_logic:
+  # ROI feasibility
+  roi:
+    min_feasible: 0.3
+    max_feasible: 10.0
+    
+  # Contribution validity
+  contributions:
+    # Marketing contribution to total sales
+    min_marketing_contribution: 0.10
+    max_marketing_contribution: 0.80
+    
+    # Individual channel contribution
+    min_channel_contribution: 0.01
+    max_channel_contribution: 0.50
+    
+  # Saturation checks
+  saturation:
+    # Warn if channels are operating at extreme saturation
+    min_efficiency: 0.20  # Below 20% efficiency = over-saturated
+    max_efficiency: 0.95  # Above 95% efficiency = under-utilized
+
+# Optimization Guardrails
+optimization:
+  # Budget reallocation limits
+  max_channel_increase: 0.50  # Max 50% increase per channel
+  max_channel_decrease: 0.30  # Max 30% decrease per channel
+  
+  # Sanity checks
+  sanity_checks:
+    - name: "total_budget_preserved"
+      description: "Sum of optimized spend equals total budget"
+      tolerance: 0.01
+      
+    - name: "bounds_respected"
+      description: "All channel allocations within defined bounds"
+      
+    - name: "roi_improvement"
+      description: "Optimized allocation should improve overall ROI"
+
+# Pipeline Execution Guardrails
+pipeline:
+  # Stage dependencies
+  enforce_stage_order: true
+  
+  # Checkpoint validation
+  checkpoints:
+    segmentation:
+      required_outputs:
+        - "segment_mappings.csv"
+      validation_function: "validate_segmentation"
+      
+    baseline:
+      required_outputs:
+        - "baseline_estimates.csv"
+        - "priors.json"
+      validation_function: "validate_baseline"
+      
+    modeling:
+      required_outputs:
+        - "model_metrics.json"
+        - "contributions.csv"
+        - "response_curves.csv"
+      validation_function: "validate_model"
+      
+    optimization:
+      required_outputs:
+        - "optimization_recommendations.csv"
+      validation_function: "validate_optimization"
+  
+  # Error handling
+  error_handling:
+    max_retries: 3
+    retry_delay_seconds: 5
+    continue_on_warning: true
+    stop_on_error: true

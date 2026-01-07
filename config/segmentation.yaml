@@ -1,0 +1,42 @@
+# Segmentation Agent Configuration
+# =================================
+
+segmentation:
+  # Clustering method
+  method: "kmeans"
+  
+  # Features for segmentation
+  features:
+    - "total_sales"
+    - "total_volume"
+    - "avg_price"
+    - "sales_velocity"
+    - "volatility"
+  
+  # Clustering parameters
+  n_clusters: 3  # Low, Medium, High segments
+  random_state: 42
+  
+  # Segment labels
+  segment_labels:
+    0: "Low_Volume"
+    1: "Medium_Volume"
+    2: "High_Volume"
+  
+  # Minimum samples per segment
+  min_samples_per_segment: 10
+  
+  # Feature scaling
+  scaling:
+    method: "standard"  # StandardScaler
+    
+  # Output configuration
+  output:
+    segment_mapping_file: "data/processed/segment_mappings.csv"
+    segment_stats_file: "data/processed/segment_statistics.json"
+    visualization_file: "artifacts/segments_visualization.png"
+  
+  # Validation thresholds
+  validation:
+    min_silhouette_score: 0.3
+    max_inertia: null

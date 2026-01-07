@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMX Agent - Marketing Mix Optimization Platform</title>
+    <meta name="description"
+        content="AI-powered Marketing Mix Modeling and Budget Optimization Platform for data-driven marketing decisions">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#gradient1)" />
+                        <path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" opacity="0.6" />
+                        <defs>
+                            <linearGradient id="gradient1" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#667eea" />
+                                <stop offset="100%" stop-color="#764ba2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>MMX Agent</h1>
+                    <span class="brand-subtitle">Marketing Mix Optimization</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#dashboard" class="nav-link active">Dashboard</a>
+                <a href="#pipeline" class="nav-link">Pipeline</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#insights" class="nav-link">Insights</a>
+            </div>
+            <button class="btn-secondary" id="settingsBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 1v6m0 6v6m-6-6h6m2 0h6" />
+                </svg>
+                Settings
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                AI-Powered Analytics
+            </div>
+            <h2 class="hero-title">Transform Your Marketing ROI</h2>
+            <p class="hero-description">
+                Leverage advanced agentic AI to optimize your marketing budget allocation with
+                deterministic, explainable insights across all channels.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-primary btn-large" id="uploadDataBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                    </svg>
+                    Upload Data & Start
+                </button>
+                <button class="btn-outline btn-large" id="quickStartBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Quick Start Guide
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">AI Agents</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">99.7%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">&lt; 5min</div>
+                    <div class="stat-label">Processing Time</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-card card-animated">
+                <canvas id="heroChart" width="500" height="300"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Pipeline Status Section -->
+            <section class="section" id="pipeline-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        Optimization Pipeline
+                    </h2>
+                    <button class="btn-primary" id="runPipelineBtn" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        Run Pipeline
+                    </button>
+                </div>
+
+                <div class="pipeline-stages">
+                    <!-- Stage 1: Segmentation -->
+                    <div class="stage-card" data-stage="segmentation">
+                        <div class="stage-header">
+                            <div class="stage-icon pending">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </div>
+                            <div class="stage-info">
+                                <h3>Segmentation Agent</h3>
+                                <p>Groups sub-categories using clustering</p>
+                            </div>
+                            <div class="stage-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="stage-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2: Trend Scanner -->
+                    <div class="stage-card" data-stage="trend">
+                        <div class="stage-header">
+                            <div class="stage-icon pending">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M3 3v18h18M7 16l4-4 4 4 6-6" />
+                                </svg>
+                            </div>
+                            <div class="stage-info">
+                                <h3>Trend Scanner Agent</h3>
+                                <p>Detects trends, seasonality, and anomalies</p>
+                            </div>
+                            <div class="stage-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="stage-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 3: Baseline -->
+                    <div class="stage-card" data-stage="baseline">
+                        <div class="stage-header">
+                            <div class="stage-icon pending">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M3 12h18M3 6h18M3 18h18" />
+                                </svg>
+                            </div>
+                            <div class="stage-info">
+                                <h3>Baseline Agent</h3>
+                                <p>Estimates baseline sales and sets priors</p>
+                            </div>
+                            <div class="stage-status">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="checkpoint-badge">⚠️ Checkpoint</span>
+                            </div>
+                        </div>
+                        <div class="stage-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 4: Model Optimization -->
+                    <div class="stage-card" data-stage="model">
+                        <div class="stage-header">
+                            <div class="stage-icon pending">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                                </svg>
+                            </div>
+                            <div class="stage-info">
+                                <h3>Model Optimization Agent</h3>
+                                <p>Applies transformations and trains MMM</p>
+                            </div>
+                            <div class="stage-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="stage-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 5: Budget Optimization -->
+                    <div class="stage-card" data-stage="budget">
+                        <div class="stage-header">
+                            <div class="stage-icon pending">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <div class="stage-info">
+                                <h3>Budget Optimization Agent</h3>
+                                <p>Runs constrained optimization (SLSQP)</p>
+                            </div>
+                            <div class="stage-status">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="checkpoint-badge">⚠️ Checkpoint</span>
+                            </div>
+                        </div>
+                        <div class="stage-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 6: Insight Generation -->
+                    <div class="stage-card" data-stage="insight">
+                        <div class="stage-header">
+                            <div class="stage-icon pending">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 11l3 3 8-8M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+                                </svg>
+                            </div>
+                            <div class="stage-info">
+                                <h3>Insight Agent</h3>
+                                <p>Generates narratives and visualizations</p>
+                            </div>
+                            <div class="stage-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="stage-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Dashboard -->
+            <section class="section" id="results-section" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                        Optimization Results
+                    </h2>
+                    <div class="result-actions">
+                        <button class="btn-outline" id="downloadExcelBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                            </svg>
+                            Download Excel
+                        </button>
+                        <button class="btn-outline" id="downloadPdfBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+                            </svg>
+                            Export PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <!-- Key Metrics -->
+                    <div class="metric-card">
+                        <div class="metric-icon success">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 3v18h18M7 16l4-4 4 4 6-6" />
+                            </svg>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-label">Expected ROI Lift</div>
+                            <div class="metric-value">+32.4%</div>
+                            <div class="metric-change positive">↑ $450K additional revenue</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon info">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4M12 8h.01" />
+                            </svg>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-label">Model Accuracy (R²)</div>
+                            <div class="metric-value">0.947</div>
+                            <div class="metric-change positive">↑ Excellent fit</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon warning">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-label">Total Budget</div>
+                            <div class="metric-value">$1.00M</div>
+                            <div class="metric-change neutral">→ Fully allocated</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-label">Channels Optimized</div>
+                            <div class="metric-value">5</div>
+                            <div class="metric-change positive">↑ All channels</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Channel Contributions</h3>
+                        <canvas id="contributionsChart" width="400" height="300"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Current vs Optimized Allocation</h3>
+                        <canvas id="allocationChart" width="400" height="300"></canvas>
+                    </div>
+                    <div class="chart-card chart-card-wide">
+                        <h3 class="chart-title">Response Curves by Channel</h3>
+                        <canvas id="responseCurvesChart" width="800" height="300"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recommendations Table -->
+                <div class="table-card">
+                    <h3 class="table-title">Budget Allocation Recommendations</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Channel</th>
+                                    <th>Current Spend</th>
+                                    <th>Optimized Spend</th>
+                                    <th>Change</th>
+                                    <th>Expected ROI</th>
+                                    <th>Contribution %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recommendationsTable">
+                                <!-- Will be populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insights Section -->
+            <section class="section" id="insights-section" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        AI-Generated Insights
+                    </h2>
+                </div>
+
+                <div class="insights-grid">
+                    <div class="insight-card highlight">
+                        <div class="insight-header">
+                            <span class="insight-badge">Top Recommendation</span>
+                            <span class="insight-icon">💡</span>
+                        </div>
+                        <h3 class="insight-title">Shift Budget to Digital Channels</h3>
+                        <p class="insight-description">
+                            Our analysis shows that increasing digital spend by 40% (from $200K to $280K)
+                            will yield the highest marginal ROI. Digital channels are currently under-saturated
+                            and show strong response elasticity.
+                        </p>
+                        <div class="insight-metrics">
+                            <div class="insight-metric">
+                                <span class="metric-label">Expected Lift</span>
+                                <span class="metric-value">+18.5%</span>
+                            </div>
+                            <div class="insight-metric">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">94.7%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <span class="insight-badge warning">Inefficiency Detected</span>
+                            <span class="insight-icon">⚠️</span>
+                        </div>
+                        <h3 class="insight-title">TV Spending Near Saturation</h3>
+                        <p class="insight-description">
+                            Current TV spend ($400K) is approaching saturation point. Recommend reducing
+                            by 20% to $320K with minimal impact on contribution, freeing up $80K for
+                            high-efficiency channels.
+                        </p>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <span class="insight-badge success">Opportunity</span>
+                            <span class="insight-icon">🚀</span>
+                        </div>
+                        <h3 class="insight-title">Seasonal Optimization Potential</h3>
+                        <p class="insight-description">
+                            Q4 shows 23% higher baseline sales. Recommend increasing OOH and Radio spend
+                            during this period to capitalize on elevated organic demand.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Sales Data</h2>
+                <button class="modal-close" id="closeUploadModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                    </svg>
+                    <h3>Drag & drop your CSV file here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept=".csv" hidden>
+                    <button class="btn-primary" id="browseBtn">Browse Files</button>
+                </div>
+                <div class="upload-requirements">
+                    <h4>Required Columns:</h4>
+                    <ul>
+                        <li><code>date</code> - Weekly date (YYYY-MM-DD)</li>
+                        <li><code>sales</code> or <code>total_sales</code> - Sales values</li>
+                        <li><code>total_volume</code> - Volume sold</li>
+                        <li><code>{channel}_spend</code> - Spend per channel (e.g., tv_spend, digital_spend)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkpoint Modal -->
+    <div class="modal" id="checkpointModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Pipeline Checkpoint</h2>
+            </div>
+            <div class="modal-body">
+                <div class="checkpoint-content">
+                    <div class="checkpoint-icon">⚠️</div>
+                    <h3 id="checkpointTitle">Review Required</h3>
+                    <p id="checkpointDescription">Please review the results before proceeding.</p>
+                    <div id="checkpointData" class="checkpoint-data"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" id="rejectCheckpoint">Reject & Stop</button>
+                <button class="btn-primary" id="approveCheckpoint">Approve & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=2"></script>
+</body>
+
+</html>

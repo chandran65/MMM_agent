@@ -1,0 +1,81 @@
+# Budget Optimization Configuration
+# ==================================
+
+optimization:
+  # Optimization objective
+  objective: "maximize_sales"  # or "maximize_roi"
+  
+  # Budget constraints
+  budget:
+    total_budget: 1000000  # Total marketing budget
+    currency: "USD"
+    
+    # Channel-level bounds (as % of total budget)
+    channel_bounds:
+      TV:
+        min: 0.15
+        max: 0.40
+      Digital:
+        min: 0.20
+        max: 0.50
+      Print:
+        min: 0.05
+        max: 0.25
+      OOH:
+        min: 0.05
+        max: 0.20
+      Radio:
+        min: 0.05
+        max: 0.20
+  
+  # Spend constraints
+  constraints:
+    # Minimum total budget utilization
+    min_budget_utilization: 0.90
+    
+    # Maximum change from current spend (%)
+    max_change_from_current: 0.30
+    
+    # Channel-specific constraints
+    channel_constraints:
+      # Maintain minimum spend on brand-building channels
+      TV:
+        min_absolute_spend: 100000
+      Print:
+        min_absolute_spend: 50000
+  
+  # Multipliers and scenarios
+  scenarios:
+    base:
+      description: "Current budget allocation"
+      multiplier: 1.0
+      
+    aggressive:
+      description: "20% budget increase"
+      multiplier: 1.2
+      
+    conservative:
+      description: "20% budget decrease"
+      multiplier: 0.8
+      
+  # Optimization solver settings
+  solver:
+    method: "SLSQP"
+    maxiter: 1000
+    ftol: 1e-6
+    
+    # Multiple starting points for global optimization
+    n_restarts: 5
+    
+  # Output configuration
+  output:
+    recommendations_file: "artifacts/roi/optimization_recommendations.csv"
+    scenario_comparison_file: "artifacts/roi/scenario_comparison.xlsx"
+    allocation_chart_file: "artifacts/roi/allocation_comparison.png"
+    
+  # Validation
+  validation:
+    # Ensure recommendations are realistic
+    check_roi_feasibility: true
+    min_expected_roi: 0.5
+    max_expected_roi: 5.0

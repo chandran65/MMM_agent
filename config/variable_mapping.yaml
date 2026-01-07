@@ -1,0 +1,46 @@
+# Variable Mapping Configuration
+# ==============================
+# Use this file to manually specify the mapping between your input data columns
+# and the variables used by the MMX Agent system.
+
+variable_mapping:
+  # The column containing date stamps
+  # Format should be compatible with the date_format in global.yaml
+  date_column: "Week"
+
+  # The main output variable (KPI) to predict (e.g., Sales, Conversions)
+  output_variable:
+    name: "Sales"
+    column: "sales" 
+
+  # Input variables (Drivers)
+  input_variables:
+    # Media/Paid Marketing Channels (spend or impressions)
+    # These are the variables you want to measure ROI for.
+    media:
+      - name: "Branded_Search"
+        column: "branded_search_spend"
+      - name: "Nonbranded_Search"
+        column: "nonbranded_search_spend"
+      - name: "Facebook"
+        column: "facebook_spend"
+      - name: "Print"
+        column: "print_spend"
+      - name: "OOH"
+        column: "ooh_spend"
+      - name: "TV"
+        column: "tv_spend"
+      - name: "Radio"
+        column: "radio_spend"
+
+    # Organic/Non-Paid Channels
+    organic:
+      # Add organic channels here if available in your data
+      # - name: "Organic_Visits"
+      #   column: "organic_visits"
+
+    # Control Variables (External factors like seasonality, price, economic indicators)
+    controls:
+      # Add control variables here if available
+      # - name: "Price"
+      #   column: "Avg_Price"

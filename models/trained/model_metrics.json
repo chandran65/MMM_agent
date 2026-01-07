@@ -1,0 +1,21 @@
+{
+  "r_squared": -0.05639093724868549,
+  "r_squared_train": 0.027824142161836818,
+  "adjusted_r_squared": -0.006202012862498885,
+  "mae": 11734.077653070794,
+  "mae_train": 11356.369442481153,
+  "rmse": 14005.225205999539,
+  "rmse_train": 15027.22800250648,
+  "mape": 106.417877132906,
+  "mape_train": 169.08098870136322,
+  "coefficients": {
+    "Branded_Search_transformed": 0.0023487183686936863,
+    "Nonbranded_Search_transformed": 0.03304499894458074,
+    "Facebook_transformed": 0.009533264810348852,
+    "Print_transformed": 0.0,
+    "OOH_transformed": 0.0,
+    "TV_transformed": 4167.190180847402,
+    "Radio_transformed": 5161.62938040023
+  },
+  "intercept": -3169.3376159889585
+}
